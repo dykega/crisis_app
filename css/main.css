@@ -1,0 +1,123 @@
+/*
+ * Globals
+ */
+
+/* Links */
+a,
+a:focus,
+a:hover {
+  color: #fff;
+}
+
+/* Custom default button */
+.btn-default,
+.btn-default:hover,
+.btn-default:focus {
+  color: #333;
+  text-shadow: none; /* Prevent inheritence from `body` */
+  background-color: #fff;
+  border: 1px solid #fff;
+}
+
+
+/*
+ * Base structure
+ */
+html,
+body {
+  min-height: 100%;
+  background-color: #005a9c;
+  background-size: 100% 100%;
+  /*-webkit-box-shadow: inset 0 0 100px rgba(0,0,0,.5);
+        box-shadow: inset 0 0 100px rgba(0,0,0,.5);*/
+}
+body {
+  color: #fff;
+  text-shadow: 0 1px 3px rgba(0,0,0,.5);
+}
+
+/* Extra markup and styles for table-esque vertical and horizontal centering */
+ul{
+    margin-bottom: 50px;
+}
+
+.lead{
+    font-size: 16px;
+    text-align: left;
+}
+
+.step_ch{
+    display: inline-block;
+    margin: 5px !important;
+}
+
+#steps_ul {
+    list-style-type: none;
+}
+
+#steps_ul li{
+    margin: 3px;
+    padding: 2px;
+}
+nav.navbar {
+    background-color: #fff;
+}
+
+.show_section{
+    display: initial;
+}
+.hide_section{
+    display: none;
+}
+.crisis_section{
+    margin-left: auto;
+}
+#settings{
+    font-size: 25px;
+}
+#settings button{
+    background: inherit;
+    border: none;
+    color: #666;
+    margin-top:7px;
+}
+#addElem{
+    color: #666;
+    width: 70%;
+}
+#addElemSec button{
+    background: inherit;
+    border: none;
+}
+#addElemSec button i{
+    margin-left: 6px;
+}
+#addElemContacts{
+    color: #666;
+    width: 90%;
+}
+#addElemSecContacts button{
+    background: inherit;
+    border: none;
+}
+#addElemSecContacts button i{
+    margin-left: 6px;
+}
+button.deleteItem {
+    background: inherit;
+    border: none;
+}
+button.deleteItem i{
+    color: red;
+}
+button.edit-mobile{
+    width: 42px;
+    height: 32px;
+    color:grey;
+}
+button.edit-mobile i.fa-edit{
+    font-size:27px;
+    position: relative;
+    top: -5px;
+    left: -2px;
+}

@@ -1,0 +1,130 @@
+
+<!DOCTYPE html>
+<html lang="en">
+  <head>
+    <meta charset="utf-8">
+    <meta http-equiv="X-UA-Compatible" content="IE=edge">
+    <meta name="viewport" content="width=device-width, initial-scale=1">
+    <meta name="description" content="Luther College Health Services Crisis App">
+    <meta name="author" content="Gage Dykema">
+    <link rel="icon" href="../../favicon.ico">
+
+    <title>Luther College Counseling Services Crisis App</title>
+
+    <!-- Bootstrap core CSS -->
+    <link href="/css/bootstrap.min.css" rel="stylesheet">
+    <link href="/css/font-awesome.css" rel="stylesheet">
+    <link href="/css/main.css" rel="stylesheet">
+
+
+    <!-- Custom styles for this template -->
+    <!-- <link href="cover.css" rel="stylesheet"> -->
+
+    <!-- HTML5 shim and Respond.js IE8 support of HTML5 elements and media queries -->
+    <!--[if lt IE 9]>
+      <script src="https://oss.maxcdn.com/html5shiv/3.7.2/html5shiv.min.js"></script>
+      <script src="https://oss.maxcdn.com/respond/1.4.2/respond.min.js"></script>
+    <![endif]-->
+  </head>
+  <script src="//code.jquery.com/jquery-1.11.0.min.js"></script>
+  <script src="//code.jquery.com/jquery-migrate-1.2.1.min.js"></script>
+  <body onload="addExistingData()">
+
+    <div class="site-wrapper">
+        
+      <nav class="navbar navbar-default" role="navigation">
+        <div class="container-fluid">
+          <div class="navbar-header">
+            <button type="button" class="navbar-toggle collapsed edit-mobile" data-toggle="collapse" data-target="" aria-expanded="false" aria-controls="" onClick="toggleEdit();" title="Edit">
+            <i class="fa fa-edit"></i>
+            </button>
+            <button type="button" class="navbar-toggle collapsed" data-toggle="collapse" data-target="#navbar" aria-expanded="false" aria-controls="navbar">
+              <span class="sr-only">Toggle navigation</span>
+              <span class="icon-bar"></span>
+              <span class="icon-bar"></span>
+              <span class="icon-bar"></span>
+            </button>
+            <a class="navbar-brand" href="#" onClick="return false;">LC Counseling Services Crisis App</a>
+          </div>
+          <div id="navbar" class="navbar-collapse collapse">
+            <ul class="nav navbar-nav" id="nav_ul">
+              <li id="steps_nav" class="active"><a title="Show crisis steps" href="#" onClick="showSteps();return false;">Steps</a></li>
+              <li id="contacts_nav"><a title="Show contacts" href="#" onClick="showContacts();return false;">Contacts</a></li>
+              <li class="visible-xs"><a title = "Edit" href="#" id="editNavMenu" onClick="toggleEdit();return false;">Edit</a></li>
+            </ul>
+            <ul class="nav navbar-nav navbar-right">
+                <li id="settings" class="visible-md visible-lg visible-sm"><button type="button" onClick="toggleEdit();" title="Edit"><i class="fa fa-edit"></i></button></li>
+            </ul>
+          </div><!--/.nav-collapse -->
+        </div><!--/.container-fluid -->
+      </nav>
+
+        <div id="crisis_section" class="show_section">
+        <!-- <div class="col-md-2"></div> -->
+          <div class="col-md-7 col-md-offset-2">
+            <h1>Crisis Steps</h1>
+            <p class="lead">When I am in a crisis state... feeling impulsive, really upset, or suicidal... I will:</p>
+          </div>
+        <!-- <div class="col-md-2"></div> -->
+            
+          <div id="step_section" class="col-md-8 col-md-offset-2">
+            <div id = "steps_list">
+                <ul id="steps_ul">
+                <li id="addElemSec"  class="hide_section"><input type="checkbox" class="step_ch"><input type="text" id="addElem"><button type="button" onClick="addItem();" title="Add"><i class="fa fa-plus"></i></button></li> 
+                </ul>
+            </div>
+          </div>
+            
+        </div>
+        
+        <div id="contact_section" class="hide_section col-md-8 col-md-offset-2">
+            <h1>Contacts</h1>
+            <p class="lead">When Counseling Services is open: 8am - noon and 1 - 5pm weekdays [when classes are in session]:</p>
+            <ul>
+                <li>Go to Counseling Serives or call the office 563-387-1374</li>
+            </ul>
+            <p class="lead">At all other times:</p>
+            <ul>
+                <li>Call the Hall Director on duty 563-380-9898</li>
+                <li>Call Campus Security 563-387-2111</li>
+            </ul>
+            <p class="lead">Consider these additional resources:</p>
+            <ul>
+                <li>Call the National Suicide Prevention Lifeline 1-800-273-8255</li>
+                <li> Call the NE Iowa Behavioral Health Center Crisis Line 563-382-3649 or 1-800-400-8923</li>
+                <li>Go to the Winneshiek Medical Center Emergency Room 563-382-2911</li>
+            </ul>
+            <p class="lead">Other</p>
+            <ul id="contacts_ul">
+                <li id="addElemSecContacts"  class="hide_section"><input type="text" id="addElemContacts"><button type="button" onClick="addItem();" title="Add"><i class="fa fa-plus"></i></button></li> 
+            </ul>
+        </div>
+
+    </div>
+    <script>
+        $( "#addElem" ).keypress(function( event ) {
+          if ( event.which == 13 ) {
+             event.preventDefault();
+             addItem();
+          }
+        });
+        $( "#addElemContacts" ).keypress(function( event ) {
+          if ( event.which == 13 ) {
+             event.preventDefault();
+             addItem();
+          }
+        });
+          
+    </script>
+
+    <!-- Bootstrap core JavaScript
+    ================================================== -->
+    <!-- Placed at the end of the document so the pages load faster -->
+    <script src="https://ajax.googleapis.com/ajax/libs/jquery/1.11.1/jquery.min.js"></script>
+    <script src="/js/bootstrap.min.js"></script>
+    <!-- IE10 viewport hack for Surface/desktop Windows 8 bug -->
+    <!-- <script src="../../assets/js/ie10-viewport-bug-workaround.js"></script> -->
+      
+    <script src="/js/app.js"></script>
+  </body>
+</html>
