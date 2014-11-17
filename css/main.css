@@ -37,7 +37,7 @@ body {
 }
 
 /* Extra markup and styles for table-esque vertical and horizontal centering */
-ul{
+#steps_ul, #contacts_ul{
     margin-bottom: 50px;
 }
 
@@ -115,7 +115,7 @@ button.edit-mobile{
     height: 32px;
     color:grey;
 }
-button.edit-mobile i.fa-edit{
+button.edit-mobile i.fa-edit, button.edit-mobile i.fa-check-square-o{
     font-size:27px;
     position: relative;
     top: -5px;

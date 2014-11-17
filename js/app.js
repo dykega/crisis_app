@@ -59,21 +59,30 @@ function showContacts() {
 }
 
 function toggleEdit() {
-    //changes edit Icon given current state
+    //changes edit Icon (mobile and full version) given current state
     var settings = document.getElementById("settings");
+    var settings_mobile = document.getElementById("settings_mobile");
+    console.log(settings_mobile.childNodes);
     var settingsIcon = settings.childNodes[0].childNodes[0];
+    var settingsIcon_mobile = settings_mobile.childNodes[1];
     var editing = true
     if(settingsIcon.classList.contains("fa-edit")){
        editting = true
        settingsIcon.classList.remove("fa-edit");
        settingsIcon.classList.add("fa-check-square-o");
        settingsIcon.title = "Finish";
+       settingsIcon_mobile.classList.remove("fa-edit");
+       settingsIcon_mobile.classList.add("fa-check-square-o");
+       settingsIcon_mobile.title = "Finish";
     }
     else{
        editing = false
        settingsIcon.classList.remove("fa-check-square-o");
        settingsIcon.classList.add("fa-edit");
        settingsIcon.title = "Edit";
+       settingsIcon_mobile.classList.remove("fa-check-square-o");
+       settingsIcon_mobile.classList.add("fa-edit");
+       settingsIcon_mobile.title = "Edit";
     }
     
     //shows or hides input bar based on current state
@@ -92,15 +101,6 @@ function toggleEdit() {
     else{
         input.classList.remove("show_section");
         input.classList.add("hide_section");
-    }
-    
-    //changes the wording of the mobile nav given the current state
-    var editNav = document.getElementById("editNavMenu");
-    if (editing){
-        editNav.innerHTML = "Finish Editing";
-    }
-    else{
-        editNav.innerHTML = "Edit";
     }
     
     //adds delete icon to all items in editable list
