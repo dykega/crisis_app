@@ -4,22 +4,14 @@ function showSteps() {
     if(settingsIcon.classList.contains("fa-check-square-o")){
        toggleEdit();
     }
-    steps = document.getElementById("crisis_section");
-    contact = document.getElementById("contact_section");
+    
+    var flipContainer = document.getElementById("myCard");
+    if(flipContainer.classList.contains("flip")){
+       document.querySelector("#myCard").classList.toggle("flip");
+    }
+
     stepsNav = document.getElementById("steps_nav");
     contactsNav = document.getElementById("contacts_nav");
-    if(contact.classList.contains("show_section")){
-       contact.classList.remove("show_section");
-    }
-    if(!contact.classList.contains("hide_section")){
-        contact.classList.add("hide_section");
-    }
-    if(steps.classList.contains("hide_section")){
-       steps.classList.remove("hide_section");
-    }
-    if(!steps.classList.contains("show_section")){
-        steps.classList.add("show_section");
-    }
     if(contactsNav.classList.contains("active")){
         contactsNav.classList.remove("active");
     }
@@ -34,22 +26,14 @@ function showContacts() {
     if(settingsIcon.classList.contains("fa-check-square-o")){
        toggleEdit();
     }
-    steps = document.getElementById("crisis_section");
-    contact = document.getElementById("contact_section");
+    
+    var flipContainer = document.getElementById("myCard");
+    if(!flipContainer.classList.contains("flip")){
+       document.querySelector("#myCard").classList.toggle("flip");
+    }
+
     stepsNav = document.getElementById("steps_nav");
     contactsNav = document.getElementById("contacts_nav");
-    if(steps.classList.contains("show_section")){
-       steps.classList.remove("show_section");
-    }
-    if(!steps.classList.contains("hide_section")){
-        steps.classList.add("hide_section");
-    }
-    if(contact.classList.contains("hide_section")){
-       contact.classList.remove("hide_section");
-    }
-    if(!contact.classList.contains("show_section")){
-        contact.classList.add("show_section");
-    }
     if(stepsNav.classList.contains("active")){
         stepsNav.classList.remove("active");
     }
@@ -62,7 +46,6 @@ function toggleEdit() {
     //changes edit Icon (mobile and full version) given current state
     var settings = document.getElementById("settings");
     var settings_mobile = document.getElementById("settings_mobile");
-    console.log(settings_mobile.childNodes);
     var settingsIcon = settings.childNodes[0].childNodes[0];
     var settingsIcon_mobile = settings_mobile.childNodes[1];
     var editing = true
@@ -86,8 +69,16 @@ function toggleEdit() {
     }
     
     //shows or hides input bar based on current state
-    var crisisSec = document.getElementById("crisis_section");
-    if (crisisSec.classList.contains("show_section")){
+    var flipContainer = document.getElementById("myCard");
+    if(flipContainer.classList.contains("flip")){
+       stepsShowing = false;
+    }
+    else{
+       stepsShowing = true;
+    }
+       
+    //var crisisSec = document.getElementById("crisis_section");
+    if (stepsShowing){
         var input = document.getElementById("addElemSec");
     }
     else {
@@ -118,19 +109,24 @@ function toggleEdit() {
 }
 
 function addItem() {
-    var crisisSec = document.getElementById("crisis_section");
-    if (crisisSec.classList.contains("show_section")){
+    var flipContainer = document.getElementById("myCard");
+    if(flipContainer.classList.contains("flip")){
+       stepsShowing = false;
+    }
+    else{
+       stepsShowing = true;
+    }
+    //var crisisSec = document.getElementById("crisis_section");
+    if (stepsShowing){
         activeList = document.getElementById("steps_ul");
         var inputSec = document.getElementById("addElem");
-        steps = true;
     }
     else {
         activeList = document.getElementById("contacts_ul");
         var inputSec = document.getElementById("addElemContacts");
-        steps = false;
     }
     var text = inputSec.value
-    if(steps){
+    if(stepsShowing){
         stepsStr = localStorage.getItem('steps')
         if(stepsStr == null){
             steps = []
@@ -157,11 +153,16 @@ function addItem() {
     inputSec.value = ""
     var newElm = document.createElement("li")
     var t = document.createTextNode(text);
-    if(steps){
+    if(stepsShowing){
         addDel = "Step";
     }
     else{
         addDel = "Contact";
+        var phoneLink = document.createElement("a");
+        phoneLink.setAttribute("href","tel:" + text);
+        phoneLink.innerHTML = text;
+        phoneLink.classList.add("phone");
+        t = phoneLink;
     }
     if(localStorage.getItem("count") == null){
         var idStr = "0";
@@ -174,7 +175,7 @@ function addItem() {
         localStorage.setItem("count",idStr);
     }
     newElm.innerHTML = '<button type="button" class="deleteItem" id="delButton' + addDel + idStr  + '" onClick="deleteItem(this.id);"><i class="fa fa-trash"></i></button>';
-    if(steps){
+    if(stepsShowing){
         newElm.innerHTML += '<input type="checkbox" class="step_ch">'
     }
     newElm.appendChild(t);
@@ -184,11 +185,18 @@ function addItem() {
 }
 
 function deleteItem(idName){
-    var crisisSec = document.getElementById("crisis_section");
+    //var crisisSec = document.getElementById("crisis_section");
+    var flipContainer = document.getElementById("myCard");
+    if(flipContainer.classList.contains("flip")){
+       stepsShowing = false;
+    }
+    else{
+       stepsShowing = true;
+    }
     item = document.querySelector('#' + idName);
     elemRemove = item.parentNode;
     itemRemove = elemRemove.childNodes[elemRemove.childNodes.length-1]
-    if (crisisSec.classList.contains("show_section")){
+    if (stepsShowing){
         stepsStr = localStorage.getItem('steps');
         steps = JSON.parse(stepsStr);
         for(x=0;x<steps.length;x++){
@@ -226,7 +234,7 @@ function addExistingData(){
         stepsExist = JSON.parse(stepsStr)
         for(x=0;x<stepsExist.length;x++){
             newStep = stepsExist[x]
-            var crisisSec = document.getElementById("crisis_section");
+            //var crisisSec = document.getElementById("crisis_section");
             activeList = document.getElementById("steps_ul");
             steps = true;
             var newElm = document.createElement("li")
@@ -245,10 +253,14 @@ function addExistingData(){
         for(x=0;x<contacts.length;x++){
             newContact = contacts[x]
             activeList = document.getElementById("contacts_ul");
-            var inputSec = document.getElementById("addElemContacts");
+            //var inputSec = document.getElementById("addElemContacts");
             steps = false;
             var newElm = document.createElement("li")
-            var t = document.createTextNode(newContact);
+            var phoneLink = document.createElement("a");
+            phoneLink.setAttribute("href","tel:" + newContact);
+            phoneLink.innerHTML = newContact;
+            phoneLink.classList.add("phone");
+            var t = phoneLink;
             addDel = "Contact";
             idStr = count.toString();
             count += 1;
@@ -258,4 +270,41 @@ function addExistingData(){
         }
     }
     localStorage.setItem("count",count.toString());
+}
+
+function flipSide(){
+    var settings = document.getElementById("settings");
+    var settingsIcon = settings.childNodes[0].childNodes[0];
+    if(settingsIcon.classList.contains("fa-check-square-o")){
+       toggleEdit();
+    }
+    var flipContainer = document.getElementById("myCard");
+    if(flipContainer.classList.contains("flip")){
+       toSteps = true;
+    }
+    else{
+       toSteps = false;
+    }
+       
+    document.querySelector("#myCard").classList.toggle("flip");
+    
+    stepsNav = document.getElementById("steps_nav");
+    contactsNav = document.getElementById("contacts_nav");
+    
+    if(toSteps){
+        if(contactsNav.classList.contains("active")){
+            contactsNav.classList.remove("active");
+        }
+        if(!stepsNav.classList.contains("active")){
+            stepsNav.classList.add("active");
+        }
+    }
+    else{
+       if(stepsNav.classList.contains("active")){
+        stepsNav.classList.remove("active");
+        }
+        if(!contactsNav.classList.contains("active")){
+            contactsNav.classList.add("active");
+        } 
+    }
 }

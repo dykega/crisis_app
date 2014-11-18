@@ -58,48 +58,56 @@
           </div><!--/.nav-collapse -->
         </div><!--/.container-fluid -->
       </nav>
-
-        <div id="crisis_section" class="show_section">
-        <!-- <div class="col-md-2"></div> -->
-          <div class="col-md-7 col-md-offset-2">
-            <h1>Crisis Steps</h1>
-            <p class="lead">When I am in a crisis state... feeling impulsive, really upset, or suicidal... I will:</p>
-          </div>
-        <!-- <div class="col-md-2"></div> -->
-            
-          <div id="step_section" class="col-md-8 col-md-offset-2">
-            <div id = "steps_list">
-                <ul id="steps_ul">
-                <li id="addElemSec"  class="hide_section"><input type="checkbox" class="step_ch"><input type="text" id="addElem"><button type="button" onClick="addItem();" title="Add"><i class="fa fa-plus"></i></button></li> 
-                </ul>
-            </div>
-          </div>
-            
-        </div>
         
-        <div id="contact_section" class="hide_section col-md-8 col-md-offset-2">
-            <h1>Contacts</h1>
-            <p class="lead">When Counseling Services is open: 8am - noon and 1 - 5pm weekdays [when classes are in session]:</p>
-            <ul>
-                <li>Go to Counseling Serives or call the office 563-387-1374</li>
-            </ul>
-            <p class="lead">At all other times:</p>
-            <ul>
-                <li>Call the Hall Director on duty 563-380-9898</li>
-                <li>Call Campus Security 563-387-2111</li>
-            </ul>
-            <p class="lead">Consider these additional resources:</p>
-            <ul>
-                <li>Call the National Suicide Prevention Lifeline 1-800-273-8255</li>
-                <li> Call the NE Iowa Behavioral Health Center Crisis Line 563-382-3649 or 1-800-400-8923</li>
-                <li>Go to the Winneshiek Medical Center Emergency Room 563-382-2911</li>
-            </ul>
-            <p class="lead">Other</p>
-            <ul id="contacts_ul">
-                <li id="addElemSecContacts"  class="hide_section"><input type="text" id="addElemContacts"><button type="button" onClick="addItem();" title="Add"><i class="fa fa-plus"></i></button></li> 
-            </ul>
-        </div>
-
+    <div id="myCard" class="flip-container" ontouchstart="this.classList.toggle('hover');">
+	<div class="flipper">
+		<div class="front" id="crisis_section">
+			<div class="col-md-7 col-md-offset-2">
+                <h1>Crisis Steps</h1>
+                <p class="lead">When I am in a crisis state... feeling impulsive, really upset, or suicidal... I will:</p>
+            </div>            
+            <div id="step_section" class="col-md-8 col-md-offset-2">
+                <div id = "steps_list">
+                    <ul id="steps_ul">
+                    <li id="addElemSec"  class="hide_section"><input type="checkbox" class="step_ch"><input type="text" id="addElem"><button type="button" onClick="addItem();" title="Add"><i class="fa fa-plus"></i></button></li> 
+                    </ul>
+                </div>
+          </div>
+          <div class = "col-xs-offset-3 col-xs-3">
+              <button class="flipButton" onclick='flipSide();'>Flip</button>
+          </div>
+		</div>
+        
+		<div class="back" id="contact_section">
+            <div class="col-md-8 col-md-offset-2">
+                <h1>Contacts</h1>
+                <p class="lead">When Counseling Services is open: 8am - noon and 1 - 5pm weekdays [when classes are in session]:</p>
+                <ul>
+                    <li>Go to Counseling Serives or call the office <a class="phone" href="tel:563-387-1374">563-387-1374</a></li>
+                </ul>
+                <p class="lead">At all other times:</p>
+                <ul>
+                    <li>Call the Hall Director on duty <a class="phone" href="tel:563-380-9898">563-380-9898</a></li>
+                    <li>Call Campus Security <a class="phone" href="tel:563-387-2111">563-387-2111</a></li>
+                </ul>
+                <p class="lead">Consider these additional resources:</p>
+                <ul>
+                    <li>Call the National Suicide Prevention Lifeline <a class="phone" href="tel:1-800-273-8255">1-800-273-8255</a></li>
+                    <li> Call the NE Iowa Behavioral Health Center Crisis Line <a class="phone" href="tel:563-382-3649">563-382-3649</a> or <a class="phone" href="tel:1-800-400-8923">1-800-400-8923</a></li>
+                    <li>Go to the Winneshiek Medical Center Emergency Room <a class="phone" href="tel:563-382-2911">563-382-2911</a></li>
+                </ul>
+                <p class="lead">Other</p>
+                <ul id="contacts_ul">
+                    <li id="addElemSecContacts"  class="hide_section"><input type="text" id="addElemContacts"><button type="button" onClick="addItem();" title="Add"><i class="fa fa-plus"></i></button></li> 
+                </ul>
+                <div class = "col-xs-offset-3 col-xs-3">
+                    <button class="flipButton" onclick='flipSide();'>Flip</button>
+                </div>
+            </div>
+		</div>
+	</div>
+    </div> 
+        
     </div>
     <script>
         $( "#addElem" ).keypress(function( event ) {
