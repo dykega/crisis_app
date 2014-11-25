@@ -181,15 +181,15 @@ button.flipButton{
 /* IE supported CSS */
 /* entire container, keeps perspective */
 .flip-container {
-	perspective: 1000;
-	transform-style: preserve-3d;
+	-webkit-perspective: 1000;
+	-webkit-transform-style: preserve-3d;
 }
 	/*  UPDATED! flip the pane when hovered */
 	.flip-container.flip .back {
-		transform: rotateY(0deg);
+		-webkit-transform: rotateY(0deg);
 	}
 	.flip-container.flip .front {
-	    transform: rotateY(180deg);
+	    -webkit-transform: rotateY(180deg);
 	}
 
 .flip-container, .front, .back {
@@ -199,17 +199,17 @@ button.flipButton{
 
 /* flip speed goes here */
 .flipper {
-	transition: 0.6s;
-	transform-style: preserve-3d;
+	-webkit-transition: 0.6s;
+	-webkit-transform-style: preserve-3d;
 
 	position: relative;
 }
 
 /* hide back of pane during swap */
 .front, .back {
-	backface-visibility: hidden;
-	transition: 0.6s;
-	transform-style: preserve-3d;
+	-webkit-backface-visibility: hidden;
+	-webkit-transition: 0.6s;
+	-webkit-transform-style: preserve-3d;
 
 	position: absolute;
 	top: 0;
@@ -219,12 +219,12 @@ button.flipButton{
 /*  UPDATED! front pane, placed above back */
 .front {
 	z-index: 2;
-	transform: rotateY(0deg);
+	-webkit-transform: rotateY(0deg);
 }
 
 /* back, initially hidden pane */
 .back {
-	transform: rotateY(-180deg);
+	-webkit-transform: rotateY(-180deg);
 }
 
 /* 
@@ -235,13 +235,13 @@ button.flipButton{
 }
 
 	.vertical .back {
-		transform: rotateX(180deg);
+		-webkit-transform: rotateX(180deg);
 	}
 
 	.vertical.flip-container:hover .back {
-	    transform: rotateX(0deg);
+	    -webkit-transform: rotateX(0deg);
 	}
 
 	.vertical.flip-container:hover .front {
-	    transform: rotateX(180deg);
+	    -webkit-transform: rotateX(180deg);
 	}
