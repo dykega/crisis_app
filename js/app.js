@@ -111,7 +111,6 @@ function toggleEdit() {
        stepsShowing = true;
     }
        
-    //var crisisSec = document.getElementById("crisis_section");
     if (stepsShowing){
         var input = document.getElementById("addElemSec");
     }
@@ -150,7 +149,6 @@ function addItem() {
     else{
        stepsShowing = true;
     }
-    //var crisisSec = document.getElementById("crisis_section");
     if (stepsShowing){
         activeList = document.getElementById("steps_ul");
         var inputSec = document.getElementById("addElem");
@@ -219,7 +217,6 @@ function addItem() {
 }
 
 function deleteItem(idName){
-    //var crisisSec = document.getElementById("crisis_section");
     var flipContainer = document.getElementById("myCard");
     if(flipContainer.classList.contains("flip")){
        stepsShowing = false;
