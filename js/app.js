@@ -2,6 +2,23 @@ function showSteps() {
     var settings = document.getElementById("settings");
     var settingsIcon = settings.childNodes[0].childNodes[0];
     if(settingsIcon.classList.contains("fa-check-square-o")){
+        var flipContainer = document.getElementById("myCard");
+        if(flipContainer.classList.contains("flip")){
+           stepsShowing = false;
+        }
+        else{
+           stepsShowing = true;
+        }
+        if (stepsShowing){
+            var inputSec = document.getElementById("addElem");
+        }
+        else {
+            var inputSec = document.getElementById("addElemContacts");
+        }
+        var text = inputSec.value
+        if(text != ""){
+            addItem();
+        }
        toggleEdit();
     }
     
@@ -24,6 +41,23 @@ function showContacts() {
     var settings = document.getElementById("settings");
     var settingsIcon = settings.childNodes[0].childNodes[0];
     if(settingsIcon.classList.contains("fa-check-square-o")){
+        var flipContainer = document.getElementById("myCard");
+        if(flipContainer.classList.contains("flip")){
+           stepsShowing = false;
+        }
+        else{
+           stepsShowing = true;
+        }
+        if (stepsShowing){
+            var inputSec = document.getElementById("addElem");
+        }
+        else {
+            var inputSec = document.getElementById("addElemContacts");
+        }
+        var text = inputSec.value
+        if(text != ""){
+            addItem();
+        }
        toggleEdit();
     }
     
@@ -276,6 +310,23 @@ function flipSide(){
     var settings = document.getElementById("settings");
     var settingsIcon = settings.childNodes[0].childNodes[0];
     if(settingsIcon.classList.contains("fa-check-square-o")){
+       var flipContainer = document.getElementById("myCard");
+        if(flipContainer.classList.contains("flip")){
+           stepsShowing = false;
+        }
+        else{
+           stepsShowing = true;
+        }
+        if (stepsShowing){
+            var inputSec = document.getElementById("addElem");
+        }
+        else {
+            var inputSec = document.getElementById("addElemContacts");
+        }
+        var text = inputSec.value
+        if(text != ""){
+            addItem();
+        }
        toggleEdit();
     }
     var flipContainer = document.getElementById("myCard");
