@@ -81,6 +81,15 @@ nav.navbar-default {
 .navbar-default .navbar-nav li a, .navbar-default .navbar-nav li a:hover{
     color: #fff;
 }
+.navbar-default .navbar-toggle{
+    border: none;
+}
+.navbar-default .navbar-toggle:focus{
+    background-color: #005a9c;
+}
+.navbar-default .navbar-toggle .icon-bar{
+    background-color: #fff;
+}
 .show_section{
     display: initial;
 }
@@ -101,7 +110,7 @@ nav.navbar-default {
 }
 #addElem{
     color: #666;
-    width: 70%;
+    width: 40%;
 }
 #addElemSec button{
     background: inherit;
@@ -112,7 +121,7 @@ nav.navbar-default {
 }
 #addElemContacts{
     color: #666;
-    width: 90%;
+    width: 40%;
 }
 #addElemSecContacts button{
     background: inherit;
@@ -131,7 +140,7 @@ button.deleteItem i{
 button.edit-mobile{
     width: 42px;
     height: 32px;
-    color:grey;
+    color:#fff;
 }
 button.edit-mobile i.fa-edit, button.edit-mobile i.fa-check-square-o{
     font-size:27px;
@@ -145,7 +154,7 @@ button.flipButton{
     margin-bottom: 15px;
     /*background-color: #E8A500;*/
     background-color: #1073CE;
-    width: 75px;
+    width: 85px;
     height: 35px;
     border-radius: 6px;
     border-color: white;
