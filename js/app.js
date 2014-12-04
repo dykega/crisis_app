@@ -121,6 +121,10 @@ function toggleEdit() {
     if (editing){
         input.classList.remove("hide_section");
         input.classList.add("show_section");
+        if(!stepsShowing){
+            var otherContacts = document.getElementById("otherContacts");
+            otherContacts.scrollIntoView(true);
+        }
     }
     else{
         input.classList.remove("show_section");
@@ -304,8 +308,10 @@ function addExistingData(){
 }
 
 function flipSide(){
+    var top = document.getElementById("topOfPage");
     var settings = document.getElementById("settings");
     var settingsIcon = settings.childNodes[0].childNodes[0];
+    top.scrollIntoView(true);
     if(settingsIcon.classList.contains("fa-check-square-o")){
        var flipContainer = document.getElementById("myCard");
         if(flipContainer.classList.contains("flip")){
