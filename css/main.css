@@ -1,6 +1,19 @@
 /*
  * Globals
  */
+/* Fonts */
+@font-face {
+  font-family: 'Roboto Slab';
+  font-style: normal;
+  font-weight: 400;
+  src: url(../fonts/RobotoSlab-Regular.ttf) format('truetype');
+}
+@font-face {
+  font-family: 'Open Sans';
+  font-style: normal;
+  font-weight: 400;
+  src: url(../fonts/OpenSans-Regular.ttf) format('truetype');
+}
 
 /* Links */
 p,li{

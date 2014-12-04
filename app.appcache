@@ -1,0 +1,15 @@
+CACHE MANIFEST
+./css/main.css
+./css/bootstrap.min.css
+./css/bootstrap.css
+./css/font-awesome.css
+./css/font-awesome.min.css
+./js/app.js
+./js/bootstrap.min.js
+./js/jquery-1.11.1.min.js
+./js/jquery-migrate-1.2.1.min.js
+./fonts/fontawesome-webfont.woff
+./fonts/fontawesome-webfont.ttf
+./fonts/OpenSans-Regular.ttf
+./fonts/RobotoSlab-Regular.ttf
+./favicon.ico
