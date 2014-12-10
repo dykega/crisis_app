@@ -124,11 +124,19 @@ function toggleEdit() {
         if(!stepsShowing){
             var otherContacts = document.getElementById("otherContacts");
             otherContacts.scrollIntoView(true);
+            //adds extra room to the bottom the contact page for mobile keyboard room
+            var contactFlipButton = document.getElementById("contactFlipButton");
+            contactFlipButton.classList.add("keyboardRoom");
         }
     }
     else{
         input.classList.remove("show_section");
         input.classList.add("hide_section");
+        if(!stepsShowing){
+            //removes extra room to the bottom the contact page for mobile keyboard room
+            var contactFlipButton = document.getElementById("contactFlipButton");
+            contactFlipButton.classList.remove("keyboardRoom");
+        }
     }
     
     //adds delete icon to all items in editable list

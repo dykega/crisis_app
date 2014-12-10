@@ -323,3 +323,7 @@ li.active{
     -ms-transform: rotateY(-180deg);
     transform: rotateY(-180deg);
 }
+
+button.keyboardRoom {
+    margin-bottom: 150px;
+}
